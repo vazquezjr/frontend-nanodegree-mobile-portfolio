@@ -53,3 +53,19 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 
 * <a href="http://getbootstrap.com/css/">Bootstrap's CSS Classes</a>
 * <a href="http://getbootstrap.com/components/">Bootstrap's Components</a>
+
+# Optimizations
+### index.html
+- Inlined style.css.
+- Loaded the Google Fonts asynchronously using the loadCSS script.
+- Added the media="print" attribute to print.css.
+- Added async to the Google Analytics script.
+- Optimized images for mobile.
+
+### pizza.html
+- Inlined style.css.
+- Added will-change: transform as a mover class attribute within the style tag to prevent unnecessary printing of pizza.html.
+
+### main.js
+- Batched the layout reads in the updatePositions function to prevent layout thrashing.
+- Batched the layout reads in the changePizzaSizes function and the determineDx function to prevent layout thrashing.
