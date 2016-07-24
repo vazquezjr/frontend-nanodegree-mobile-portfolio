@@ -502,9 +502,13 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.querySelectorAll('.mover');
+  var phase = [];
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    phase.push(Math.sin((document.body.scrollTop / 1250) + (i % 5)));
+  }
+
+  for (var i = 0; i < items.length; i++) {
+    items[i].style.left = items[i].basicLeft + 100 * phase[i] + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
