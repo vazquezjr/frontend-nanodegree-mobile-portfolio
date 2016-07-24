@@ -65,7 +65,9 @@ The portfolio was built on Twitter's <a href="http://getbootstrap.com/">Bootstra
 ### pizza.html
 - Inlined style.css.
 - Added will-change: transform as a mover class attribute within the style tag to prevent unnecessary printing of pizza.html.
+- Deleted will-change: transform from the mover class and added backface-visibility: hidden to the mover class.
 
 ### main.js
 - Batched the layout reads in the updatePositions function to prevent layout thrashing.
 - Batched the layout reads in the changePizzaSizes function and the determineDx function to prevent layout thrashing.
+- Stored the results of query calls into variables to avoid redundant retrievals.
